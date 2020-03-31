@@ -1,0 +1,20 @@
+<h1>Liste des Pizza</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prix</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let unPlat of listPlat">
+            <td>{{unPlat.idplat}}</td>
+            <td>{{unPlat.nomplat}}</td>
+            <td>{{unPlat.prixplat}}€</td>
+
+
+        </tr>
+    </tbody>
+</table>

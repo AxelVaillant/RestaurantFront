@@ -1,0 +1,22 @@
+<h1>Historique des Factures</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Montant</th>
+            <th scope="col">Reservation</th>
+            <th scope="col">Date</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let unFacture of listFacture">
+            <td>{{unFacture.idfacture}}</td>
+            <td>{{unFacture.montant}}</td>
+            <td>{{unFacture.reservation.client}}</td>
+            <td>{{unFacture.reservation.datereservation}}</td>
+            
+
+        </tr>
+    </tbody>
+</table>

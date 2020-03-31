@@ -1,0 +1,17 @@
+<h1>Ajouter Commande</h1>
+<div class="container">
+
+    
+<form>
+                  
+        <div class="form-group">
+            <label for="reservation">Reservation</label>
+            <select class="form-control" name="reservation" id="reservation" [(ngModel)]="newCommande.reservation">
+                <option *ngFor="let unReservation of listReservation" [ngValue]="unReservation">{{unReservation.client}}</option>
+            </select>
+          </div>
+
+
+        <button type="submit" (click)="createCommande()" class="btn btn-primary">Ajouter</button>
+      </form>
+    </div>

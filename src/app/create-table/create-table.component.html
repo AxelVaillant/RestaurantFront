@@ -1,0 +1,23 @@
+<h1>Ajouter table</h1>
+<div class="container">
+
+    
+    <form>
+        <div class="form-group">
+          <label for="places">Places</label>
+          <input name="places" type="text" class="form-control"  [(ngModel)]="newTable.places" >
+        </div>
+
+
+                  
+        <div class="form-group">
+            <label for="serveur">Serveur</label>
+            <select class="form-control" name="serveur" id="serveur" [(ngModel)]="newTable.serveur">
+                <option *ngFor="let unUser of listUser" [ngValue]="unUser">{{unUser.nomuser}}</option>
+            </select>
+          </div>
+
+
+        <button type="submit" (click)="createTable()" class="btn btn-primary">Ajouter</button>
+      </form>
+    </div>

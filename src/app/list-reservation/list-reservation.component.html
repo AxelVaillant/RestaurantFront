@@ -1,0 +1,25 @@
+<h1>Liste des Reservation</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Couverts</th>
+            <th scope="col">Date</th>
+            <th scope="col">Table</th>
+            <th scope="col">Client</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let unReservation of listReservation">
+            <td>{{unReservation.idreservation}}</td>
+            <td>{{unReservation.nombre}}</td>
+            <td>{{unReservation.datereservation}}</td>
+            <td>{{unReservation.table}}</td>
+            <td>{{unReservation.role.client}}</td>
+            <td>
+
+                <a type="submit" class="btn btn-danger btn-sm" (click)='deleteReservation(unReservation.idreservation)' name="unReservation.idreservation" >Supprimer</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
