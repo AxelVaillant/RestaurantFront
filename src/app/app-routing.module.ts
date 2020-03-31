@@ -15,6 +15,7 @@ import { ListReservationComponent } from './list-reservation/list-reservation.co
 import { CreateReservationComponent } from './create-reservation/create-reservation.component';
 import { CreateRoleComponent } from './create-role/create-role.component';
 import { ListRoleComponent } from './list-role/list-role.component';
+import { UpdatePlatComponent } from './update-plat/update-plat.component';
 
 
 const routes: Routes = [
@@ -77,6 +78,10 @@ const routes: Routes = [
   {
     path:"reservation/save",
     component:CreateReservationComponent
+  },
+  {
+    path:"plat/update/:id",
+    component:UpdatePlatComponent
   },
 ];
 

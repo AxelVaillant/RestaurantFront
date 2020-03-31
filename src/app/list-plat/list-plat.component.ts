@@ -19,5 +19,25 @@ listPlat : Plat[]=[]
       }
      )
   }
-
+  getbyid(idplat:number){
+    this.platservice.getbyid(idplat).subscribe(
+      data=>(
+        console.log(data)
+      )
+    )
+  }
+  updatePlat(id:number,plat:Plat){
+    this.platservice.update(id,plat).subscribe(
+      data=>(
+        console.log(data)
+      )
+    )
+  }
+  deletePlat(id:number){
+    this.platservice.delete(id).subscribe(
+      data=>(
+        console.log(data)
+      )
+    )
+  }
 }

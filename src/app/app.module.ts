@@ -21,6 +21,10 @@ import { CreateFactureComponent } from './create-facture/create-facture.componen
 import { ListFactureComponent } from './list-facture/list-facture.component';
 import { ListReservationComponent } from './list-reservation/list-reservation.component';
 import { CreateReservationComponent } from './create-reservation/create-reservation.component';
+import { UpdatePlatComponent } from './update-plat/update-plat.component';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
 
 @NgModule({
   declarations: [
@@ -40,7 +44,8 @@ import { CreateReservationComponent } from './create-reservation/create-reservat
     CreateFactureComponent,
     ListFactureComponent,
     ListReservationComponent,
-    CreateReservationComponent
+    CreateReservationComponent,
+    UpdatePlatComponent
   ],
   imports: [
     BrowserModule,

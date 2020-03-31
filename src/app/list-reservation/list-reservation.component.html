@@ -13,9 +13,9 @@
         <tr *ngFor="let unReservation of listReservation">
             <td>{{unReservation.idreservation}}</td>
             <td>{{unReservation.nombre}}</td>
-            <td>{{unReservation.datereservation}}</td>
-            <td>{{unReservation.table}}</td>
-            <td>{{unReservation.role.client}}</td>
+            <td>{{unReservation.datereservation | date :'short':'UTC+0':'fr'}}</td>
+            <td>{{unReservation.table.idtable}}</td>
+            <td>{{unReservation.client.nomuser}}</td>
             <td>
 
                 <a type="submit" class="btn btn-danger btn-sm" (click)='deleteReservation(unReservation.idreservation)' name="unReservation.idreservation" >Supprimer</a>

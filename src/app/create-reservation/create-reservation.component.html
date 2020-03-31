@@ -22,8 +22,11 @@
 
           <div class="form-group">
             <label for="client">Client</label>
-            <input name="client" type="text" class="form-control" [(ngModel)]="newReservation.client">
-          </div>
+            <select class="form-control" name="client" id="client" [(ngModel)]="newReservation.client">
+                <option *ngFor="let unUser of listUser" [ngValue]="unUser">{{unUser.nomuser}}-{{unUser.prenomuser}}</option>
+            </select>
+          </div>    
+
 
 
         <button type="submit" (click)="createReservation()" class="btn btn-primary">Reserver</button>

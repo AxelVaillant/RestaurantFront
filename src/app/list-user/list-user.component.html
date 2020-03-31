@@ -17,8 +17,8 @@
             <td>{{unUser.password}}</td>
             <td>{{unUser.role.nomrole}}</td>
             <td>
-                <a [routerLink] = "['update/'+unUser.iduser]" class="btn btn-primary btn-sm"> Edit </a>
-                <a type="submit" class="btn btn-danger btn-sm" (click)='deleteUser(unUser.iduser)' name="unUser.iduser" >Delete</a>
+                <a [routerLink] = "['update/'+unUser.iduser]" class="btn btn-primary btn-sm"> Modifier </a>
+                <a type="submit" class="btn btn-danger btn-sm" (click)='deleteUser(unUser.iduser)' name="unUser.iduser" >Supprimer</a>
             </td>
         </tr>
     </tbody>
