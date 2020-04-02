@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommandeService } from '../commande.service';
 import { Commande } from '../models/commande';
+import { Reservation } from '../models/reservation';
+import { ReservationService } from '../reservation.service';
 
 @Component({
   selector: 'app-list-commande',
@@ -9,12 +11,18 @@ import { Commande } from '../models/commande';
 })
 export class ListCommandeComponent implements OnInit {
   listCommande: Commande[]=[]
-  constructor(private commandeservice : CommandeService) { }
+  listReservation : Reservation[]=[]
+  constructor(private commandeservice : CommandeService, private reservationservice: ReservationService) { }
 
   ngOnInit(): void {
     this.commandeservice.getAll().subscribe(
       data=>{
         this.listCommande=data;
+      }
+     )
+     this.reservationservice.getAll().subscribe(
+      data=>{
+        this.listReservation=data;
       }
      )
   }

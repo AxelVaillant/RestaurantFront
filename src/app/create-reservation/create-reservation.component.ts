@@ -5,6 +5,7 @@ import { Table } from '../models/table';
 import { Reservation } from '../models/reservation';
 import { UserService } from '../user.service';
 import { User } from '../models/user';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-reservation',
@@ -31,9 +32,20 @@ listUser: User[]=[]
   }
   createReservation(){
     this.reservationservice.create(this.newReservation).subscribe(
-      data=>(
-        console.log(data)
+      data=>{
+     if(data){
+          Swal.fire(
+            'Reservation effectué !',
+          ).then(()=>
+          window.location.href ="http://localhost:4200/reservation")
+          
+        }
+        else{ 
+          Swal.fire(
+            'Reservation impossible'
+          )
+        }
+      }
       )
-    )
   }
 }

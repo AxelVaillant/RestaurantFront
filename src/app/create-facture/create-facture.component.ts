@@ -3,6 +3,7 @@ import { Facture } from '../models/facture';
 import { Reservation } from '../models/reservation';
 import { FactureService } from '../facture.service';
 import { ReservationService } from '../reservation.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-facture',
@@ -23,9 +24,17 @@ listReservation : Reservation[]=[]
   }
   createFacture(){
     this.factureservice.create(this.newFacture).subscribe(
-      data=>(
-        console.log(data)
-      )
+      data=>{
+        if(data['idfacture'] ==0){
+
+        }else if(data['idfacture']){
+          Swal.fire(
+            'Facture créée !',
+          ).then(()=>
+          window.location.href ="http://localhost:4200/facture")
+          
+        }
+      }
     )
   }
 }

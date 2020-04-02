@@ -3,6 +3,7 @@ import { Role } from '../models/Role';
 import { User } from '../models/user';
 import { UserService } from '../user.service';
 import { RoleService } from '../role.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-user',
@@ -24,9 +25,17 @@ export class CreateUserComponent implements OnInit {
   }
   createUser(){
     this.userservice.create(this.newUser).subscribe(
-      data=>(
-        console.log(data)
-      )
+      data=>{
+        if(data['iduser'] ==0){
+
+        }else if(data['iduser']){
+          Swal.fire(
+            'Utilisateur créé !',
+          ).then(()=>
+          window.location.href ="http://localhost:4200/user")
+          
+        }
+      }
     )
   }
 }

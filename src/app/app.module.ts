@@ -24,6 +24,11 @@ import { CreateReservationComponent } from './create-reservation/create-reservat
 import { UpdatePlatComponent } from './update-plat/update-plat.component';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { ListElementcommandeComponent } from './list-elementcommande/list-elementcommande.component';
+import { CreateElementcommandeComponent } from './create-elementcommande/create-elementcommande.component';
+import { MenuComponent } from './menu/menu.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { UpdateTableComponent } from './update-table/update-table.component';
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
@@ -45,7 +50,12 @@ registerLocaleData(localeFr, 'fr');
     ListFactureComponent,
     ListReservationComponent,
     CreateReservationComponent,
-    UpdatePlatComponent
+    UpdatePlatComponent,
+    ListElementcommandeComponent,
+    CreateElementcommandeComponent,
+    MenuComponent,
+    UpdateUserComponent,
+    UpdateTableComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { UserService } from '../user.service';
 import { Table } from '../models/table';
 import { User } from '../models/user';
 import { TableService } from '../table.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-table',
@@ -23,9 +24,17 @@ export class CreateTableComponent implements OnInit {
   }
   createTable(){
     this.tableservice.create(this.newTable).subscribe(
-      data=>(
-        console.log(data)
-      )
+      data=>{
+        if(data['idtable'] ==0){
+
+        }else if(data['idtable']){
+          Swal.fire(
+            'Table ajoutée !',
+          ).then(()=>
+          window.location.href ="http://localhost:4200/table")
+          
+        }
+      }
     )
   }
 }

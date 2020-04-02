@@ -9,8 +9,9 @@
     </thead>
     <tbody>
         <tr *ngFor="let unCommande of listCommande">
-            <td>{{unCommande.idplat}}</td>
-            <td>{{unCommande.reservation}}</td>
+            <td>{{unCommande.idcommande}}</td>
+            <td>{{unCommande.reservation.client.nomuser}}-Table {{unCommande.reservation.table.idtable}}</td>
+            <td><a [routerLink] = "['/elementcommande']" class="btn btn-primary btn-sm"> Details </a></td>
 
 
         </tr>

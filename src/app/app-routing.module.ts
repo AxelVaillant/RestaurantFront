@@ -16,6 +16,11 @@ import { CreateReservationComponent } from './create-reservation/create-reservat
 import { CreateRoleComponent } from './create-role/create-role.component';
 import { ListRoleComponent } from './list-role/list-role.component';
 import { UpdatePlatComponent } from './update-plat/update-plat.component';
+import { ListElementcommandeComponent } from './list-elementcommande/list-elementcommande.component';
+import { CreateElementcommandeComponent } from './create-elementcommande/create-elementcommande.component';
+import { MenuComponent } from './menu/menu.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { UpdateTableComponent } from './update-table/update-table.component';
 
 
 const routes: Routes = [
@@ -82,6 +87,22 @@ const routes: Routes = [
   {
     path:"plat/update/:id",
     component:UpdatePlatComponent
+  },
+  {
+    path:"elementcommande",
+    component: ListElementcommandeComponent
+  },
+  {
+    path:"elementcommande/save",
+    component: MenuComponent
+  },
+  {
+    path:"user/update/:id",
+    component: UpdateUserComponent
+  },
+  {
+    path:"table/update/:id",
+    component: UpdateTableComponent
   },
 ];
 

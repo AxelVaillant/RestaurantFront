@@ -1,0 +1,22 @@
+<h1>Commande</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Plat</th>
+            <th scope="col">Montant</th>
+            <th scope="col">Commande</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let unElementcommande of listElco">
+            <td>{{unElementcommande.idelementcommande}}</td>
+            <td>{{unElementcommande.plat.nomplat}}</td>
+            <td>{{unElementcommande.plat.prixplat}}</td>
+            <td>{{unElementcommande.commande.idcommande}}</td>
+
+
+        </tr>
+    </tbody>
+</table>

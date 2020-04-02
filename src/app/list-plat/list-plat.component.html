@@ -1,3 +1,7 @@
+<h1>Menu</h1>
+<div class="container">
+    <section class="row">
+        <div class="col-lg-6">
 <h1>Liste des Pizza</h1>
 <table class="table table-striped">
     <thead>
@@ -21,3 +25,36 @@
         </tr>
     </tbody>
 </table>
+</div>
+<!--<div class="col-lg-6">
+<h1>Liste des Boissons</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prix</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let unPlat of listPlat">
+            <td>{{unPlat.idplat}}</td>
+            <td>{{unPlat.nomplat}}</td>
+            <td>{{unPlat.prixplat}}€</td>
+            <td>
+                <a [routerLink] = "['update/'+unPlat.idplat]" class="btn btn-primary btn-sm"> Modifier </a>
+                <a type="submit" class="btn btn-danger btn-sm" (click)='deletePlat(unPlat.idplat)' name="unPlat.idplat" >Supprimer</a>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+</div>
+-->
+</section>
+</div>
+
+
+
+

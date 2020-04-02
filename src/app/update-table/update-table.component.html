@@ -1,0 +1,17 @@
+<h1>Modifier table</h1>
+<div class="container">
+
+    
+    <form>
+    
+        <div class="form-group">
+            <label for="serveur">Serveur</label>
+            <select class="form-control" name="serveur" id="serveur" [compareWith]="compareFn" [(ngModel)]="newTable.serveur">
+                <option *ngFor="let unUser of listUser" [ngValue]="unUser">{{unUser.nomuser}}</option>
+            </select>
+          </div>
+
+
+        <button type="submit" (click)="updateTable(newTable.idtable,newTable)" class="btn btn-primary">Modifier</button>
+      </form>
+    </div>

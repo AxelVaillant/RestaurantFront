@@ -1,5 +1,5 @@
 
-a<h1>Créer facture</h1>
+<h1>Créer facture</h1>
 <div class="container">
 
     
@@ -9,7 +9,7 @@ a<h1>Créer facture</h1>
         <div class="form-group">
             <label for="reservation">Reservation</label>
             <select class="form-control" name="reservation" id="reservation" [(ngModel)]="newFacture.reservation">
-                <option *ngFor="let unReservation of listReservation" [ngValue]="unReservation">{{unReservation.client}}-{{unReservation.table}}</option>
+                <option *ngFor="let unReservation of listReservation" [ngValue]="unReservation">{{unReservation.client.nomuser}}-Table {{unReservation.table.idtable}}</option>
             </select>
           </div>
 

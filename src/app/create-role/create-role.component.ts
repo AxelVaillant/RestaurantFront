@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RoleService } from '../role.service';
 import { Role } from '../models/Role';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-role',
@@ -15,9 +16,17 @@ export class CreateRoleComponent implements OnInit {
   }
   createRole(){
     this.roleservice.create(this.newRole).subscribe(
-      data=>(
-        console.log(data)
-      )
+      data=>{
+        if(data['idrole'] ==0){
+
+        }else if(data['idrole']){
+          Swal.fire(
+            'Role ajouté !',
+          ).then(()=>
+          window.location.href ="http://localhost:4200/role")
+          
+        }
+      }
     )
   }
 }

@@ -12,6 +12,10 @@ export class PlatService {
   getAll(){
     return this.http.get<Plat[]>('http://localhost:8080/plat/all').pipe()
   }
+  getAllbyid(id:number){
+    return this.http.get<Plat[]>('http://localhost:8080/plat/all').pipe()
+  }
+  
   create(plat: Plat){
     return this.http.post<Plat>('http://localhost:8080/plat/save',plat).pipe()
   }

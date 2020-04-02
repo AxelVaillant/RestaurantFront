@@ -5,24 +5,24 @@
     <form>
         <div class="form-group">
           <label for="nombre">Nombre de personnes</label>
-          <input name="nombre" type="number" class="form-control"  [(ngModel)]="newReservation.nombre" >
+          <input name="nombre" type="number" required class="form-control"  [(ngModel)]="newReservation.nombre" >
         </div>
 
         <div class="form-group">
           <label for="datereservation">Date</label>
-          <input name="datereservation" type="datetime-local" class="form-control" [(ngModel)]="newReservation.datereservation">
+          <input name="datereservation" type="datetime-local" required class="form-control" [(ngModel)]="newReservation.datereservation">
         </div>
 
         <div class="form-group">
             <label for="table">Table</label>
-            <select class="form-control" name="table" id="table" [(ngModel)]="newReservation.table">
+            <select class="form-control" name="table" required id="table" [(ngModel)]="newReservation.table">
                 <option *ngFor="let unTable of listTable" [ngValue]="unTable">{{unTable.idtable}}-{{unTable.places}}</option>
             </select>
           </div>     
 
           <div class="form-group">
             <label for="client">Client</label>
-            <select class="form-control" name="client" id="client" [(ngModel)]="newReservation.client">
+            <select class="form-control" name="client" required id="client" [(ngModel)]="newReservation.client">
                 <option *ngFor="let unUser of listUser" [ngValue]="unUser">{{unUser.nomuser}}-{{unUser.prenomuser}}</option>
             </select>
           </div>    

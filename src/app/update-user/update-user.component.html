@@ -1,0 +1,33 @@
+<h1>Modifier utilisateur</h1>
+<div class="container">
+
+    
+    <form>
+        <div class="form-group">
+          <label for="nomuser">Nom</label>
+          <input name="nomuser" type="text" class="form-control"  [(ngModel)]="newUser.nomuser" >
+        </div>
+
+        <div class="form-group">
+          <label for="prenomuser">Prenom</label>
+          <input name="prenomuser" type="text" class="form-control" [(ngModel)]="newUser.prenomuser">
+        </div>
+
+        
+        <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input name="password" type="password" class="form-control" [(ngModel)]="newUser.password">
+          </div>
+
+                  
+        <div class="form-group">
+            <label for="role">Role</label>
+            <select class="form-control" name="role" id="role" [compareWith]="compareFn" [(ngModel)]="newUser.role">
+                <option *ngFor="let unRole of listRole" [ngValue]="unRole">{{unRole.nomrole}}</option>
+            </select>
+          </div>
+
+
+        <button type="submit" (click)="updateUser(newUser.iduser,newUser)" class="btn btn-primary">Modifier</button>
+      </form>
+    </div>

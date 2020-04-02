@@ -1,0 +1,56 @@
+<h1>Liste des Pizza</h1>
+<div class="container">
+    <section class="row">
+        <div class="col-lg-6">
+    <form>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prix</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let unPlat of listPlat">
+            <td>{{unPlat.idplat}}</td>
+            <td>{{unPlat.nomplat}}</td>
+            <td>{{unPlat.prixplat}}€</td>
+
+
+        </tr>
+    </tbody>
+</table>
+
+
+    
+    
+                      
+            <div class="form-group">
+                <label for="reservation">Reservation/Table</label>
+                <select class="form-control" name="reservation" id="reservation" [(ngModel)]="newCommande.reservation">
+                    <option *ngFor="let unReservation of listReservation" [ngValue]="unReservation">{{unReservation.client.nomuser}}-Table {{unReservation.table.idtable}}</option>
+                </select>
+              </div>
+    
+    
+            <button type="submit" (click)="createCommande()" class="btn btn-primary">Commander</button>
+          </form>
+        </div>
+
+
+
+            <div class="col-lg-6">
+                <form>
+        <div class="form-group">
+            <label for="plat">Quantité</label>
+            <select class="form-control" name="plat" id="plat" [(ngModel)]="newElement.plat">
+                <option *ngFor="let unPlat of listPlat" [ngValue]="unPlat">{{unPlat.nomplat}}</option>
+            </select>
+          </div>
+          </form>
+
+        <a type="submit" class="btn btn-success btn-sm" (click)='createElementcommande(newElement.idelementcommande,newElement)' name="unElement.idelementcommande"  >Ajouter a la commande</a>
+    </div>
+</section>
