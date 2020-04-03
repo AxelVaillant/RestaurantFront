@@ -89,11 +89,11 @@ const routes: Routes = [
     component:UpdatePlatComponent
   },
   {
-    path:"elementcommande",
+    path:"elementcommande/:id",
     component: ListElementcommandeComponent
   },
   {
-    path:"elementcommande/save",
+    path:"elementcommandesave",
     component: MenuComponent
   },
   {

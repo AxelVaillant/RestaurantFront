@@ -4,7 +4,7 @@
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Montant</th>
-            <th scope="col">Reservation</th>
+            <th scope="col">Nom de la reservation</th>
             <th scope="col">Date</th>
 
         </tr>
@@ -13,8 +13,8 @@
         <tr *ngFor="let unFacture of listFacture">
             <td>{{unFacture.idfacture}}</td>
             <td>{{unFacture.montant}}</td>
-            <td>{{unFacture.reservation.client.nomuser}}-{{unFacture.reservation.client.prenomuser}}</td>
-            <td>{{unFacture.reservation.datereservation | date :'short':'UTC+0':'fr'}}</td>
+            <td>{{unFacture.commande.reservation.client.nomuser}}-{{unFacture.commande.reservation.client.prenomuser}}</td>
+            <td>{{unFacture.commande.reservation.datereservation | date :'short':'UTC+0':'fr'}}</td>
             
 
         </tr>

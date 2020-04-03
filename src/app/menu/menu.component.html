@@ -27,15 +27,7 @@
     
     
                       
-            <div class="form-group">
-                <label for="reservation">Reservation/Table</label>
-                <select class="form-control" name="reservation" id="reservation" [(ngModel)]="newCommande.reservation">
-                    <option *ngFor="let unReservation of listReservation" [ngValue]="unReservation">{{unReservation.client.nomuser}}-Table {{unReservation.table.idtable}}</option>
-                </select>
-              </div>
-    
-    
-            <button type="submit" (click)="createCommande()" class="btn btn-primary">Commander</button>
+
           </form>
         </div>
 
@@ -43,14 +35,34 @@
 
             <div class="col-lg-6">
                 <form>
+                    <div class="form-group">
+                        <label for="reservation">Reservation/Table</label>
+                        <select class="form-control" name="reservation" id="reservation" [(ngModel)]="newCommande.reservation">
+                            <option *ngFor="let unReservation of listReservation" [ngValue]="unReservation">{{unReservation.client.nomuser}}-Table {{unReservation.table.idtable}}</option>
+                        </select>
+                      </div>
+            
+            
+                    <button type="submit" (click)="createCommande()" class="btn btn-primary">Selectioner</button>
+            
+                    <div class="form-group">
+                        <label for="plat">Selection</label>
+                        <select class="form-control" name="commande" id="commande" [(ngModel)]="newElement.commande">
+                            <option *ngFor="let unCommande of listCommande" [ngValue]="unCommande">{{unCommande.idcommande}}-Table {{unCommande.reservation.table.idtable}}</option>
+                        </select>      
+                      </div>
+
+
         <div class="form-group">
-            <label for="plat">Quantité</label>
+            <label for="plat">Choix</label>
             <select class="form-control" name="plat" id="plat" [(ngModel)]="newElement.plat">
                 <option *ngFor="let unPlat of listPlat" [ngValue]="unPlat">{{unPlat.nomplat}}</option>
-            </select>
+            </select>      
           </div>
-          </form>
+          <a type="submit" class="btn btn-success btn-sm" (click)='createElementcommande(newElement)' name="unElement.idelementcommande"  >Ajouter a la commande</a>
 
-        <a type="submit" class="btn btn-success btn-sm" (click)='createElementcommande(newElement.idelementcommande,newElement)' name="unElement.idelementcommande"  >Ajouter a la commande</a>
+         
+        
+    </form>
     </div>
 </section>

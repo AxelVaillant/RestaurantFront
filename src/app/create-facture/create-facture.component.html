@@ -7,9 +7,9 @@
 
                   
         <div class="form-group">
-            <label for="reservation">Reservation</label>
-            <select class="form-control" name="reservation" id="reservation" [(ngModel)]="newFacture.reservation">
-                <option *ngFor="let unReservation of listReservation" [ngValue]="unReservation">{{unReservation.client.nomuser}}-Table {{unReservation.table.idtable}}</option>
+            <label for="commande">Commande</label>
+            <select class="form-control" name="commande" id="commande" [(ngModel)]="newFacture.commande">
+                <option *ngFor="let unCommande of listCommande" [ngValue]="unCommande">{{unCommande.reservation.client.nomuser}}-Table {{unCommande.reservation.table.idtable}}</option>
             </select>
           </div>
 

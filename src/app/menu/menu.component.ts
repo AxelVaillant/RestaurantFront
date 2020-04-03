@@ -19,6 +19,7 @@ export class MenuComponent implements OnInit {
   newElement: ElementCommande =new ElementCommande
 listPlat : Plat[]=[]
  listElementcommande: ElementCommande[]=[] 
+ listCommande : Commande[]=[]
  newCommande : Commande=new Commande()
  listReservation:Reservation[]=[]
  idplatURL:number
@@ -44,6 +45,11 @@ listPlat : Plat[]=[]
      this.reservationservice.getAll().subscribe(
       data=>{
         this.listReservation=data;
+      }
+    )
+    this.commandeservice.getAll().subscribe(
+      data=>{
+        this.listCommande=data;
       }
     )
   }

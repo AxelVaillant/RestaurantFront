@@ -4,6 +4,7 @@
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Reservation</th>
+            <th scope="col">Total</th>
 
         </tr>
     </thead>
@@ -11,8 +12,8 @@
         <tr *ngFor="let unCommande of listCommande">
             <td>{{unCommande.idcommande}}</td>
             <td>{{unCommande.reservation.client.nomuser}}-Table {{unCommande.reservation.table.idtable}}</td>
-            <td><a [routerLink] = "['/elementcommande']" class="btn btn-primary btn-sm"> Details </a></td>
-
+            <td>{{unCommande.total}}€</td>
+            <td><a [routerLink] = "['/elementcommande/'+unCommande.idcommande]" class="btn btn-primary btn-sm"> Details </a></td>
 
         </tr>
     </tbody>

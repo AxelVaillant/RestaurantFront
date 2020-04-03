@@ -4,6 +4,8 @@ import { Reservation } from '../models/reservation';
 import { FactureService } from '../facture.service';
 import { ReservationService } from '../reservation.service';
 import Swal from 'sweetalert2';
+import { Commande } from '../models/commande';
+import { CommandeService } from '../commande.service';
 
 @Component({
   selector: 'app-create-facture',
@@ -13,12 +15,18 @@ import Swal from 'sweetalert2';
 export class CreateFactureComponent implements OnInit {
 newFacture:Facture= new Facture()
 listReservation : Reservation[]=[]
-  constructor(private factureservice:FactureService,private reservationservice : ReservationService) { }
+listCommande : Commande[]=[]
+  constructor(private factureservice:FactureService,private reservationservice : ReservationService,private commandeservice : CommandeService) { }
 
   ngOnInit(): void {
     this.reservationservice.getAll().subscribe(
       data=>{
         this.listReservation=data;
+      }
+    )
+    this.commandeservice.getAll().subscribe(
+      data=>{
+        this.listCommande=data;
       }
     )
   }
