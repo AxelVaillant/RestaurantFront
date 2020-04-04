@@ -1,0 +1,31 @@
+<h1>Validation Commande</h1>
+<div class="container">
+
+    
+<form>
+                  
+    <h3>Récapitulatif commande</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Plat</th>
+                <th scope="col">Montant</th>
+                <th scope="col">Commande</th>
+    
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let unElementcommande of listElco">
+                <td>{{unElementcommande.plat.nomplat}}</td>
+                <td>{{unElementcommande.plat.prixplat}}€</td>
+                <td>{{unElementcommande.commande.idcommande}}</td>
+    
+    
+            </tr>
+        </tbody>
+    </table>
+
+
+          <a type="submit" class="btn btn-danger btn-sm" (click)='total(newCommande.idcommande,newCommande)' name="newCommande.idcommand" >Confimer Validation </a>
+      </form>
+    </div>

@@ -60,11 +60,18 @@ listPlat : Plat[]=[]
        console.log(data)
 
       )
-    )
-
-    
-    
+    )  
   }
+
+  total(id:number , commande:Commande){
+    this.commandeservice.total(id,commande).subscribe(
+
+      data=>{
+        console.log(data)
+      }
+    )
+  }
+
   createCommande(){
     this.commandeservice.create(this.newCommande).subscribe(
       data=>(

@@ -8,7 +8,6 @@ import { CreateTableComponent } from './create-table/create-table.component';
 import { ListPlatComponent } from './list-plat/list-plat.component';
 import { CreatePlatComponent } from './create-plat/create-plat.component';
 import { ListCommandeComponent } from './list-commande/list-commande.component';
-import { CreateCommandeComponent } from './create-commande/create-commande.component';
 import { ListFactureComponent } from './list-facture/list-facture.component';
 import { CreateFactureComponent } from './create-facture/create-facture.component';
 import { ListReservationComponent } from './list-reservation/list-reservation.component';
@@ -21,6 +20,7 @@ import { CreateElementcommandeComponent } from './create-elementcommande/create-
 import { MenuComponent } from './menu/menu.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UpdateTableComponent } from './update-table/update-table.component';
+import { ValidationComComponent } from './validation-com/validation-com.component';
 
 
 const routes: Routes = [
@@ -65,8 +65,8 @@ const routes: Routes = [
     component:ListCommandeComponent
   },
   {
-    path:"commande/save",
-    component:CreateCommandeComponent
+    path:"commande/total/:id",
+    component:ValidationComComponent
   },
   {
     path:"facture",

@@ -43,7 +43,7 @@
                       </div>
             
             
-                    <button type="submit" (click)="createCommande()" class="btn btn-primary">Selectioner</button>
+                    <button type="submit" (click)="createCommande()" class="btn btn-primary">Selectionner</button>
             
                     <div class="form-group">
                         <label for="plat">Selection</label>
@@ -61,6 +61,15 @@
           </div>
           <a type="submit" class="btn btn-success btn-sm" (click)='createElementcommande(newElement)' name="unElement.idelementcommande"  >Ajouter a la commande</a>
 
+          <br/><br/><br/><br/>
+
+          <div class="form-group">
+            <label for="idcommande">N° Commande</label>
+            <select class="form-control" name="idcommande" id="idcommande" [(ngModel)]="newCommande.idcommande">
+                <option *ngFor="let unCommande of listCommande" [ngValue]="unCommande.idcommande">{{unCommande.idcommande}}-Table {{unCommande.reservation.table.idtable}}</option>
+            </select>      
+          </div>
+          <a [routerLink] = "['/commande/total/'+newCommande.idcommande]" class="btn btn-warning btn-sm"> Valider commande </a>
          
         
     </form>

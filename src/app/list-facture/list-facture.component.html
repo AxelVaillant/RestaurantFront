@@ -12,7 +12,7 @@
     <tbody>
         <tr *ngFor="let unFacture of listFacture">
             <td>{{unFacture.idfacture}}</td>
-            <td>{{unFacture.montant}}</td>
+            <td>{{unFacture.montant}}€</td>
             <td>{{unFacture.commande.reservation.client.nomuser}}-{{unFacture.commande.reservation.client.prenomuser}}</td>
             <td>{{unFacture.commande.reservation.datereservation | date :'short':'UTC+0':'fr'}}</td>
             

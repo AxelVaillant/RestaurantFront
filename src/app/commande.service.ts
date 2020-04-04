@@ -18,4 +18,7 @@ export class CommandeService {
   getbyid(id:number){
     return this.http.get<Commande>('http://localhost:8080/commande/byid/'+id).pipe()
   }
+  total(id:number,commande:Commande){
+    return this.http.put<Commande>('http://localhost:8080/commande/total/'+id,commande).pipe()
+  }
 }
