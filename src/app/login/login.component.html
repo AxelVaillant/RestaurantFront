@@ -1,0 +1,21 @@
+
+<form action="action_page.php" method="post">
+
+  
+    <div class="container" style="background-color:#f1f1f1">
+        <h1 style="text-align: center;">Identification</h1>
+      <label for="nomuser"><b>Nom</b></label>
+      <input type="text" placeholder="Saisir nom" name="nomuser" [(ngModel)]="user.nomuser">
+  
+      <label for="password"><b>Mot de passe</b></label>
+      <input type="password" placeholder="Saisir mot de passe" name="password" [(ngModel)]="user.password">
+  
+      <button type="submit" (click)="login()">Se connecter</button>
+
+    </div>
+  
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn">Annuler</button>
+      <span class="psw">Pas encore membre ? <a href="http://localhost:4200/user/save">S'inscrire</a></span>
+    </div>
+  </form>

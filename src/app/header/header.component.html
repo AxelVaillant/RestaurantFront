@@ -6,17 +6,47 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="http://localhost:4200/user">Utilisateur <span class="sr-only">(current)</span></a>
+
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:4200/user/login">Identification</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Client
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="http://localhost:4200/user/save">Inscription</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="http://localhost:4200/reservation/save">Reserver</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="http://localhost:4200/elementcommandesave">Commander</a>
+          </div> 
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://localhost:4200/role">Role</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="http://localhost:4200/table">Table</a>
-          </li>
-          <li class="nav-item">
           <a class="nav-link" href="http://localhost:4200/plat">Menu</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Staff
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="http://localhost:4200/user/save">Inscription</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="http://localhost:4200/role/save">Ajout Role</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="http://localhost:4200/table/save">Ajout Table</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="http://localhost:4200/plat/save">Ajout Plat</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="http://localhost:4200/reservation/save">Ajout Reservation</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="http://localhost:4200/elementcommandesave">Ajout Commande</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="http://localhost:4200/facture/save">Facturer</a>
+
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://localhost:4200/reservation">Reservation</a>
@@ -24,30 +54,18 @@
         <li class="nav-item">
           <a class="nav-link" href="http://localhost:4200/commande">Commande</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Ajout
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="http://localhost:4200/user/save">User</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="http://localhost:4200/role/save">Role</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="http://localhost:4200/table/save">Table</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="http://localhost:4200/plat/save">Plat</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="http://localhost:4200/reservation/save">Reservation</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="http://localhost:4200/elementcommandesave">Commande</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="http://localhost:4200/facture/save">Facture</a>
-
-          </div>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="http://localhost:4200/facture">Historique</a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:4200/user">Utilisateur <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="http://localhost:4200/table">Table</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:4200/role">Role</a>
+          </li>
       </ul>
     </div>
   </nav>

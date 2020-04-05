@@ -1,4 +1,4 @@
 export class Role{
     idRole:number;
-    nomrole:String;
+    nomrole:string;
 }

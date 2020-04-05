@@ -21,12 +21,16 @@ import { MenuComponent } from './menu/menu.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UpdateTableComponent } from './update-table/update-table.component';
 import { ValidationComComponent } from './validation-com/validation-com.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuardService } from './auth-guard.service';
+import { RoleGuardService } from './role-guard.service';
 
 
 const routes: Routes = [
   {
     path:"user",
-    component: ListUserComponent
+    component: ListUserComponent,
+    canActivate :[RoleGuardService]
   },
   {
     path:"user/save",
@@ -38,19 +42,23 @@ const routes: Routes = [
   },
   {
     path:"role",
-    component: ListRoleComponent
+    component: ListRoleComponent,
+    canActivate :[RoleGuardService]
   },
   {
     path:"role/save",
-    component:CreateRoleComponent
+    component:CreateRoleComponent,
+    canActivate :[RoleGuardService]
   },
   {
     path:"table",
-    component:ListTableComponent
+    component:ListTableComponent,
+    canActivate :[RoleGuardService]
   },
   {
     path:"table/save",
-    component:CreateTableComponent
+    component:CreateTableComponent,
+    canActivate :[RoleGuardService]
   },
   {
     path:"plat",
@@ -58,11 +66,13 @@ const routes: Routes = [
   },
   {
     path:"plat/save",
-    component:CreatePlatComponent
+    component:CreatePlatComponent,
+    canActivate :[RoleGuardService]
   },
   {
     path:"commande",
-    component:ListCommandeComponent
+    component:ListCommandeComponent,
+    canActivate :[RoleGuardService]
   },
   {
     path:"commande/total/:id",
@@ -70,11 +80,13 @@ const routes: Routes = [
   },
   {
     path:"facture",
-    component:ListFactureComponent
+    component:ListFactureComponent,
+    canActivate :[RoleGuardService]
   },
   {
     path:"facture/save",
-    component:CreateFactureComponent
+    component:CreateFactureComponent,
+    canActivate :[RoleGuardService]
   },
   {
     path:"reservation",
@@ -82,11 +94,13 @@ const routes: Routes = [
   },
   {
     path:"reservation/save",
-    component:CreateReservationComponent
+    component:CreateReservationComponent,
+    canActivate:[AuthGuardService]
   },
   {
     path:"plat/update/:id",
-    component:UpdatePlatComponent
+    component:UpdatePlatComponent,
+    canActivate :[RoleGuardService]
   },
   {
     path:"elementcommande/:id",
@@ -98,11 +112,17 @@ const routes: Routes = [
   },
   {
     path:"user/update/:id",
-    component: UpdateUserComponent
+    component: UpdateUserComponent,
+    canActivate :[RoleGuardService]
   },
   {
     path:"table/update/:id",
-    component: UpdateTableComponent
+    component: UpdateTableComponent,
+    canActivate :[RoleGuardService]
+  },
+  {
+    path:"user/login",
+    component : LoginComponent
   },
 ];
 

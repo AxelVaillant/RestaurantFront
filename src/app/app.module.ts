@@ -29,6 +29,7 @@ import { MenuComponent } from './menu/menu.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { UpdateTableComponent } from './update-table/update-table.component';
 import { ValidationComComponent } from './validation-com/validation-com.component';
+import { LoginComponent } from './login/login.component';
 registerLocaleData(localeFr, 'fr');
 
 @NgModule({
@@ -55,7 +56,8 @@ registerLocaleData(localeFr, 'fr');
     CreateElementcommandeComponent,
     MenuComponent,
     UpdateUserComponent,
-    UpdateTableComponent
+    UpdateTableComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
