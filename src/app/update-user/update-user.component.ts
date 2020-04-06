@@ -4,6 +4,7 @@ import { UserService } from '../user.service';
 import { ActivatedRoute } from '@angular/router';
 import { RoleService } from '../role.service';
 import { Role } from '../models/Role';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update-user',
@@ -42,7 +43,15 @@ export class UpdateUserComponent implements OnInit {
       updateUser(id:number , User:User){
         this.Userservice.update(id,User).subscribe(
           data=>{
-            console.log(data)
+            if(data['iduser'] ==0){
+    
+            }else if(data['iduser']){
+              Swal.fire(
+                'Utilisateur modifié !',
+              ).then(()=>
+              window.location.href ="http://localhost:4200/user")
+              
+            }
           }
         )
       }

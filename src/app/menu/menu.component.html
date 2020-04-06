@@ -1,7 +1,8 @@
-<h1>Liste des Pizza</h1>
-<div class="container">
+<h1 style="margin-left: 250px;">Liste des Pizza</h1>
+<div class="container" >
     <section class="row">
-        <div class="col-lg-6">
+
+        <div class="col-lg-6" id="c1">
     <form>
 <table class="table table-striped">
     <thead>
@@ -33,7 +34,7 @@
 
 
 
-            <div class="col-lg-6">
+            <div class="col-lg-6" id="c2">
                 <form>
                     <div class="form-group">
                         <label for="reservation">Reservation/Table</label>
@@ -46,7 +47,7 @@
                     <button type="submit" (click)="createCommande()" class="btn btn-primary">Selectionner</button>
             
                     <div class="form-group">
-                        <label for="plat">Selection</label>
+                        <label for="plat">Selection N° Commande</label>
                         <select class="form-control" name="commande" id="commande" [(ngModel)]="newElement.commande">
                             <option *ngFor="let unCommande of listCommande" [ngValue]="unCommande">{{unCommande.idcommande}}-Table {{unCommande.reservation.table.idtable}}</option>
                         </select>      
@@ -75,3 +76,26 @@
     </form>
     </div>
 </section>
+<br>
+<h1 id="h2">Commande</h1>
+<div class="container" id=c3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Plat</th>
+                <th scope="col">Montant</th>
+                <th scope="col">Commande</th>
+    
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let unElementcommande of listElco">
+                <td>{{unElementcommande.plat.nomplat}}</td>
+                <td>{{unElementcommande.plat.prixplat}}€</td>
+                <td>{{unElementcommande.commande.idcommande}}</td>
+    
+    
+            </tr>
+        </tbody>
+    </table>
+</div>

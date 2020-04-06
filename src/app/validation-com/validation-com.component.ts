@@ -4,7 +4,7 @@ import { CommandeService } from '../commande.service';
 import { ActivatedRoute } from '@angular/router';
 import { ElementcommandeService } from '../elementcommande.service';
 import { ElementCommande } from '../models/elementcommande';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-validation-com',
   templateUrl: './validation-com.component.html',
@@ -45,11 +45,16 @@ listElco : ElementCommande[]=[]
   total(id:number , commande:Commande){
     this.Commandeservice.total(id,commande).subscribe(
 
-      data=>{
-        console.log(data)
-      }
-    )
-  }
+      data=>{ if(data['total'] ==null){
+
+      }else if(data['total']){
+        Swal.fire(
+          'Commande envoyée !',
+        ).then(()=>
+        window.location.href ="http://localhost:4200/commande"
+      
+    )}
+  })}
       compareFn(Commande1: Commande, Commande2: Commande) {
         return Commande1 && Commande2 ? Commande1.idcommande === Commande2.idcommande : Commande1 === Commande2;
     }

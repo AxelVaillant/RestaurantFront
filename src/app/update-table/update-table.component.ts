@@ -4,7 +4,7 @@ import { TableService } from '../table.service';
 import { Table } from '../models/table';
 import { User } from '../models/user';
 import { UserService } from '../user.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-update-table',
   templateUrl: './update-table.component.html',
@@ -43,7 +43,15 @@ export class UpdateTableComponent implements OnInit {
       updateTable(id:number , Table:Table){
         this.Tableservice.update(id,Table).subscribe(
           data=>{
-            console.log(data)
+            if(data['idtable'] ==0){
+    
+            }else if(data['idtable']){
+              Swal.fire(
+                'Table modifié !',
+              ).then(()=>
+              window.location.href ="http://localhost:4200/table")
+              
+            }
           }
         )
       }

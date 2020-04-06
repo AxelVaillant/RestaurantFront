@@ -90,7 +90,8 @@ const routes: Routes = [
   },
   {
     path:"reservation",
-    component:ListReservationComponent
+    component:ListReservationComponent,
+    canActivate :[RoleGuardService]
   },
   {
     path:"reservation/save",
@@ -108,7 +109,9 @@ const routes: Routes = [
   },
   {
     path:"elementcommandesave",
-    component: MenuComponent
+    component: MenuComponent,
+    canActivate:[AuthGuardService]
+
   },
   {
     path:"user/update/:id",

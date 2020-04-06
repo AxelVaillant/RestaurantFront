@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Table } from '../models/table';
 import { TableService } from '../table.service';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-list-table',
   templateUrl: './list-table.component.html',
@@ -33,10 +33,28 @@ listTable : Table[]=[]
     )
   }
   deleteTable(id:number){
-    this.tableservice.delete(id).subscribe(
-      data=>(
-        console.log(data)
-      )
-    )
+    Swal.fire({
+      title: 'Etes vous sur ?',
+      text: "Vous ne pourrez pas revenir en arrière!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Oui, Supprimer!'
+    }).then((result)=> {
+    if(result.value){
+      this.tableservice.delete(id).subscribe(
+        data=>{
+   if(data){
+            Swal.fire(
+              'Table supprimé!',
+            ).then(()=>
+             window.location.href = "http://localhost:4200/table"
+            )
+          }
+        }
+      )}
+   
+    })
   }
 }

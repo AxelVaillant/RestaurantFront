@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Plat } from '../models/plat';
 import { PlatService } from '../plat.service';
 import { ActivatedRoute } from '@angular/router';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-update-plat',
   templateUrl: './update-plat.component.html',
@@ -34,7 +34,15 @@ idplatURL : number
       updatePlat(id:number , plat:Plat){
         this.platservice.update(id,plat).subscribe(
           data=>{
-            console.log(data)
+            if(data['idplat'] ==0){
+    
+            }else if(data['idplat']){
+              Swal.fire(
+                'Plat modifié !',
+              ).then(()=>
+              window.location.href ="http://localhost:4200/plat")
+              
+            }
           }
         )
       }

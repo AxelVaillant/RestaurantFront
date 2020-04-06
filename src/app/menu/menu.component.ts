@@ -24,6 +24,7 @@ listPlat : Plat[]=[]
  listReservation:Reservation[]=[]
  idplatURL:number
  newPlat : Plat =new Plat()
+ listElco : ElementCommande[]=[];
 
   constructor(private route: ActivatedRoute,private platservice : PlatService,private elementservice : ElementcommandeService,private commandeservice : CommandeService,private reservationservice : ReservationService) {
     this.idplatURL=parseInt(this.route.snapshot.paramMap.get('id'))
@@ -52,9 +53,11 @@ listPlat : Plat[]=[]
         this.listCommande=data;
       }
     )
+
   }
 
   createElementcommande(element:ElementCommande){
+
     this.elementservice.create(this.newElement).subscribe(
       data=>(
        console.log(data)
@@ -74,18 +77,14 @@ listPlat : Plat[]=[]
 
   createCommande(){
     this.commandeservice.create(this.newCommande).subscribe(
-      data=>(
-        console.log(data)
-      )
+      data=>{
+        if(data){
+          window.location.reload()
+        }
+      }
     )
   }
-  recup(id:number,element:ElementCommande){
-    this.elementservice.recup(id,element).subscribe(
-      data=>(
-        console.log(data)
-      )
-    )
-  }
+
   getbyidc(idcommande:number){
     this.commandeservice.getbyid(idcommande).subscribe(
       data=>(

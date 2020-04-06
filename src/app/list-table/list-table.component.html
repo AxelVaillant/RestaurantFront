@@ -1,11 +1,11 @@
 <h1>Liste des Tables</h1>
-<table class="table table-striped">
+<table class="table table-striped" id="t1">
     <thead>
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Places</th>
             <th scope="col">Serveur</th>
-            <th scope="col">Disponibilité</th>
+
         </tr>
     </thead>
     <tbody>
@@ -13,7 +13,7 @@
             <td>{{unTable.idtable}}</td>
             <td>{{unTable.places}}</td>
             <td>{{unTable.serveur.nomuser}}-{{unTable.serveur.prenomuser}}</td>
-            <td>{{unTable.disponible}}</td>
+
             <td>
                 <a [routerLink] = "['update/'+unTable.idtable]" class="btn btn-primary btn-sm"> Modifier </a>
                 <a type="submit" class="btn btn-danger btn-sm" (click)='deleteTable(unTable.idtable)' name="unTable.idtable" >Supprimer</a>

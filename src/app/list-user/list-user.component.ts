@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../models/user';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list-user',
@@ -33,10 +34,30 @@ listUser : User[]=[]
     )
   }
   deleteUser(id:number){
-    this.userservice.delete(id).subscribe(
-      data=>(
-        console.log(data)
-      )
-    )
+    Swal.fire({
+      title: 'Etes vous sur ?',
+      text: "Vous ne pourrez pas revenir en arrière!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Oui, Supprimer!'
+    }).then((result)=> {
+    if(result.value){
+      this.userservice.delete(id).subscribe(
+        data=>{
+   if(data){
+            Swal.fire(
+              'Utilisateur supprimé!',
+            ).then(()=>
+             window.location.href = "http://localhost:4200/user"
+            )
+          }
+        }
+      )}
+   
+    })
+
   }
 }
+

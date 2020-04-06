@@ -18,8 +18,8 @@
             <td>{{unPlat.nomplat}}</td>
             <td>{{unPlat.prixplat}}€</td>
             <td>
-                <a [routerLink] = "['update/'+unPlat.idplat]" class="btn btn-primary btn-sm"> Modifier </a>
-                <a type="submit" class="btn btn-danger btn-sm" (click)='deletePlat(unPlat.idplat)' name="unPlat.idplat" >Supprimer</a>
+                <a [routerLink] = "['update/'+unPlat.idplat]" class="btn btn-primary btn-sm" id="idm" style="visibility: visible;"> Modifier </a>
+                <a type="submit" class="btn btn-danger btn-sm" (click)='deletePlat(unPlat.idplat)' id="ids" style="visibility: visible;" name="unPlat.idplat" >Supprimer</a>
             </td>
 
         </tr>
