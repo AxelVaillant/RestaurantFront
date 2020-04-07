@@ -64,6 +64,12 @@ listPlat : Plat[]=[]
 
       )
     )  
+    this.elementservice.allby(this.newElement).subscribe(
+      data=>(
+       console.log(data)
+
+      )
+    )  
   }
 
   total(id:number , commande:Commande){

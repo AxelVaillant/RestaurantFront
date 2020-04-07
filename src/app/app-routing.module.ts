@@ -105,7 +105,8 @@ const routes: Routes = [
   },
   {
     path:"elementcommande/:id",
-    component: ListElementcommandeComponent
+    component: ListElementcommandeComponent,
+    canActivate :[RoleGuardService]
   },
   {
     path:"elementcommandesave",

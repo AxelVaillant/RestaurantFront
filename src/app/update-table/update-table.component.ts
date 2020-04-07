@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 export class UpdateTableComponent implements OnInit {
   newTable : Table=new Table()
   listUser: User[]=[]
+  listTable:Table[]=[]
   idTableURL : number
   constructor(private Tableservice: TableService, private route : ActivatedRoute,private userservice:UserService) { 
     this.idTableURL = parseInt(this.route.snapshot.paramMap.get('id'))
@@ -22,6 +23,11 @@ export class UpdateTableComponent implements OnInit {
     this.userservice.getAll().subscribe(
       data=>{
         this.listUser=data;
+      }
+    )
+    this.Tableservice.getAll().subscribe(
+      data=>{
+        this.listTable=data;
       }
     )
     console.log(this.idTableURL);

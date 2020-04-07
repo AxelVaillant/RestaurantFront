@@ -13,7 +13,9 @@ export class ElementcommandeService {
   getAll(){
     return this.http.get<ElementCommande[]>('http://localhost:8080/elementcommande/all').pipe()
   }
-
+ allby(elementcommande: ElementCommande){
+    return this.http.post<ElementCommande[]>('http://localhost:8080/elementcommande/allby',elementcommande).pipe()
+  }
  filtre(id:number){
     return this.http.get<ElementCommande[]>('http://localhost:8080/elementcommande/filtre/'+id).pipe()
   }
